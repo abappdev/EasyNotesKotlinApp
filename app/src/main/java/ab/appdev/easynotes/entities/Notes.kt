@@ -3,40 +3,35 @@ package ab.appdev.easynotes.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "Notes")
-data class Notes (
+class Notes : Serializable {
     @PrimaryKey(autoGenerate = true)
-    var id: Int,
+    var id: Int? = null
 
     @ColumnInfo(name = "title")
-    var title: String,
+    var title: String? = null
 
     @ColumnInfo(name = "sub_title")
-    var subTitle: String,
+    var subTitle: String? = null
 
     @ColumnInfo(name = "date_time")
-    var dateTime: String,
+    var dateTime: String? = null
 
     @ColumnInfo(name = "note_text")
-    var notetext: String,
+    var notetext: String? = null
 
     @ColumnInfo(name = "img_path")
-    var imgPath: String,
+    var imgPath: String? = null
 
     @ColumnInfo(name = "web_link")
-    var weblink: String,
+    var weblink: String? = null
 
     @ColumnInfo(name = "color")
-    var color: String,
+    var color: String? = null
 
 
-
-    )
-
-
-
-{
     override fun toString(): String {
         return "$title:$dateTime"
     }
